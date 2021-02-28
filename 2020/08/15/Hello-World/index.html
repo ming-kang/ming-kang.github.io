@@ -238,6 +238,35 @@
 <div class="card card-content comment-card" style="margin-top: 16px;">
   <div class="comment-card-title">评论</div>
   
+  <div id="vcomments"></div>
+  
+  <script>
+    loadScript("//unpkg.com/valine/dist/Valine.min.js");
+    var oldLoadVa = window.onload;
+    window.onload = function () {
+      oldLoadVa && oldLoadVa();
+      new Valine({
+        el: '#vcomments',
+        appId: 'Nsu24FMgOvntTB5qBqdjAqhj-MdYXbMMI',
+        appKey: 'KOjrkaluJ9jfV3LsAqGedySj',
+        placeholder: 'Just go go',
+        path: window.location.pathname,
+        avatar: '',
+        meta: ["nick","mail","link"],
+        pageSize: '10',
+        lang: '',
+        visitor: 'true',
+        highlight: true,
+        recordIP: false,
+        
+        
+        
+        enableQQ: 'false',
+        requiredFields: [],
+      });
+    };
+  </script>
+
 </div>
 
 <div class="card card-content toc-card" id="mobiletoc">
